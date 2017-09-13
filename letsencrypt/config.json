@@ -1,0 +1,29 @@
+{
+  "name": "Let's Encrypt",
+  "version": "1.2",
+  "slug": "letsencrypt",
+  "description": "Manage certificate from Let's Encrypt",
+  "url": "https://home-assistant.io/addons/lets_encrypt/",
+  "startup": "once",
+  "boot": "manual",
+  "ports": {
+    "80/tcp": 80,
+    "443/tcp": 443
+   },
+  "map": ["ssl:rw"],
+  "options": {
+    "challenge": "https",
+    "email": null,
+    "domains": [null],
+    "certfile": "fullchain.pem",
+    "keyfile": "privkey.pem"
+  },
+  "schema": {
+    "challenge": "str",
+    "email": "email",
+    "domains": ["str"],
+    "certfile": "str",
+    "keyfile": "str"
+  },
+  "image": "homeassistant/{arch}-addon-letsencrypt"
+}
